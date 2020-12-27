@@ -32,6 +32,10 @@ function isArrayBuffer(val) {
   return toString.call(val) === "[object ArrayBuffer]";
 }
 
+function isBlob(val) {
+  return toString.call(val) === "[object Blob]";
+}
+
 function combineUrls(baseURL, url) {
   if (baseURL) {
     return baseURL.replace(/\/+$/, "") + "/" + url.replace(/^\/+/, "");
@@ -194,6 +198,7 @@ module.exports = {
   settle: settle,
   isStream: isStream,
   isArrayBuffer: isArrayBuffer,
+  isBlob: isBlob,
   isFunction: isFunction,
   isObjectOrArray: isObjectOrArray,
   isBuffer: isBuffer,
